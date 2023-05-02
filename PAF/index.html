@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8a0d7ba526.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>PAF</title>
+  </head>
+  <body onload=display_ct();>
+    <div class="background1">
+      <div id="hour"></div>
+      <a href="options.html"
+        ><button class="arrow">
+          <i class="fa-solid fa-bars"></i></button
+      ></a>
+      <div class="album"><img src="imagens/album.jpg" /></div>
+      <div class="texto1">Coldplay - Yellow</div>
+      <div class="buttons">
+        <button>
+          <ion-icon name="arrow-back-outline" class="icons"></ion-icon>
+        </button>
+        <button id="play-pause" onclick="playpause()">
+          <ion-icon name="caret-forward-outline" class="icons"></ion-icon>
+        </button>
+        <button>
+          <ion-icon name="arrow-forward-outline" class="icons"></ion-icon>
+        </button>
+      </div>
+      <a href="curiosities1.html"
+        ><button class="arrow">
+          <i class="fa-solid fa-info"></i></button
+      ></a>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

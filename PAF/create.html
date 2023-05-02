@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8a0d7ba526.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>PAF</title>
+  </head>
+  <body onload="display_ct();">
+    <div class="backgroundplaylist">
+      <div id="hour"></div>
+      <div class="textoplaylist">Set the mood</div>
+      <div class="buttonsoptions">
+        <button id="study" onclick="buttonClick(this)">
+          <i class="fa-solid fa-book icons" style="color: #f3f4f7"></i>
+        </button>
+        <button id="workout" onclick="buttonClick(this)">
+          <i class="fa-solid fa-dumbbell icons" style="color: #f3f4f7"></i>
+        </button>
+        <button id="party" onclick="buttonClick(this)">
+          <i
+            class="fa-solid fa-champagne-glasses icons"
+            style="color: #f3f4f7"
+          ></i>
+        </button>
+      </div>
+      <div class="setime">
+        <a href="clock.html"><button>Set time</button></a>
+      </div>
+      <div class="buttonsoptions2">
+        <button id="play" class="inactive" disabled>
+          <ion-icon name="caret-forward" class="icons"></ion-icon>
+        </button>
+        <a href="options.html"
+          ><button><ion-icon name="home" class="icons"></ion-icon></button
+        ></a>
+        <button id="save" class="inactive" disabled>
+          <ion-icon name="bookmark" class="icons"></ion-icon>
+        </button>
+      </div>
+      <div class="popup" id="popup"></div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
