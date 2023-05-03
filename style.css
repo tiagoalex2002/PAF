@@ -353,17 +353,6 @@ button#save.inactive {
   text-align: center;
 }
 
-#hour {
-  color: white;
-  background-color: #253d56;
-  display: flex;
-  justify-content: center;
-  height: 20px;
-  width: 300px;
-  border-radius: 10px 10px 0px 0px;
-  font-size: small;
-}
-
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
@@ -435,9 +424,184 @@ button#save.inactive {
   color: white;
 }
 
-#back{
-  margin-top: 10px;
-  margin-left: 5px;
+/* Slideshow container */
+.slideshow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  background: #253d56;
+  margin-top: 15%;
+  margin-left: 35%;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  text-align: center;
+  color: whitesmoke;
+  padding: 60px;
+  font-size: 20px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
   position: absolute;
-  z-index: 1;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Position the "previous button" to the left */
+.prev {
+  position: absolute;
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  opacity: 50%;
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  padding: 20px;
+  background: #253d56;
+  position: absolute;
+  bottom: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #494949;
+}
+
+.pages {
+  box-sizing: border-box;
+  }
+
+.background {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.7s;
+  color: white;
+}
+
+
+.header {
+  color: white;
+  background-color: #253d56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: 300px;
+  border-radius: 10px 10px 0px 0px;
+  font-size: small;
+}
+
+#back {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+#hour {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#help {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+
+#right {
+  flex: 1;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+  margin-left: 35%;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.868);
+}
+
+.help {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
+#helptext {
+  margin: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  margin-bottom: -20px;
+}
+
+.mySongs {
+  display: none;
 }
