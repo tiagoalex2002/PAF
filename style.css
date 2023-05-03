@@ -596,6 +596,108 @@ button#save.inactive {
   margin-bottom: -20px;
 }
 
-.mySongs {
-  display: none;
+label{
+  display: inline-block;
+  font-size: 10px;
+}
+
+.moodbuttons {
+  display: inline-block;
+  text-align: center;
+}
+
+#list{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: space-around;
+}
+
+table {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display:inline-block;
+  overflow: auto;
+  height: 150px;
+}
+
+th{
+  text-align: left;
+}
+
+th div {
+  margin-top: -30px;
+  position: absolute;
+}
+
+td {
+  vertical-align: top;
+}
+
+.songs{
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin-top: 15%;
+  margin-left: 35%;
+  height: 320px;
+  border-radius: 10px;
+  color: whitesmoke
+}
+#controls{
+  display: flex;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#controls label{
+  width: 250px;
+  font-size: large;
+  margin-left: 10px;
+}
+
+#controls button {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h1{
+  align-self: flex-start;
+  margin: 10px;
+}
+
+.overlay {
+  color: white;
+  background-color: black;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  display: flex;
+  font-size: larger;
+  text-align: center;
+  z-index: 2;
+  margin-top: -40px;
+}
+
+.confirm-box {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  text-align: center;
+  color: white;
+}
+
+.close {
+  cursor: pointer;
 }
