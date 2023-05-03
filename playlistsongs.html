@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8a0d7ba526.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>PAF</title>
+  </head>
+  <body onload="openPlaylistSongs(); display_ct();">
+    <div class="songs">
+        <div class="header">
+            <div id="back">
+                <a href="playlists.html"><i class="fa-solid fa-arrow-left fa-sm" style="color: #f3f4f7"></i></a>
+              </div>
+              <div id="hour"></div>
+              <div id="help"></div>
+        </div>
+        <h1 id="playlisttitle">Playlist X</h1>
+        <div id="controls">
+            <label id="duration">Duration:</label>
+            <button onclick="showConfirmBox()"><i class="fa-solid fa-trash"></i></button>
+            <!-- <button><i class="fa-solid fa-gear"></i></button> -->
+        </div>
+        <div id="list">
+            <table>
+                <tr>
+                  <th style="width:50px"><div></div></th>
+                  <th><div>Name</div></th>
+                  <th><div>Album</div></th>
+                  <th style="width:25px"><div></div></th>
+                </tr>
+                <tr>
+                  <td rowspan="2" style="height: 60px"><img src="img1.jpg" style="width:40px"></td>
+                  <td style="height: 10px;">Cinema</td>
+                  <td rowspan="2" style="font-size: 14px;">Harry's House</td>
+                  <td rowspan="2" id="songplay"><a href="index2.html"><i class="fa-solid fa-play" style="color:whitesmoke"></i></a></td>
+                </tr>
+                <tr>
+                  <td style="font-size: 14px; color: #B3B3A4;">Harry Styles</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="height: 60px"><img src="img2.jpg" style="width:40px"></td>
+                    <td style="height: 10px">Best Friend</td>
+                    <td rowspan="2" style="font-size: 14px;">Best Friend</td>
+                    <td rowspan="2" id="songplay"><a href="index2.html"><i class="fa-solid fa-play" style="color:whitesmoke"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 14px; color: #B3B3A4;">Rex Orange County</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2" style="height: 60px"><img src="img2.jpg" style="width:40px"></td>
+                    <td style="height: 10px">Best Friend</td>
+                    <td rowspan="2" style="font-size: 14px;">Best Friend</td>
+                    <td rowspan="2" id="songplay"><a href="index2.html"><i class="fa-solid fa-play" style="color:whitesmoke"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 14px; color: #B3B3A4;">Rex Orange County</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2" style="height: 60px"><img src="img2.jpg" style="width:40px"></td>
+                    <td style="height: 10px">Best Friend</td>
+                    <td rowspan="2" style="font-size: 14px;">Best Friend</td>
+                    <td rowspan="2" id="songplay"><a href="index2.html"><i class="fa-solid fa-play" style="color:whitesmoke"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 14px; color: #B3B3A4;">Rex Orange County</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2" style="height: 60px"><img src="img2.jpg" style="width:40px"></td>
+                    <td style="height: 10px">Best Friend</td>
+                    <td rowspan="2" style="font-size: 14px;">Best Friend</td>
+                    <td rowspan="2" id="songplay"><a href="index2.html"><i class="fa-solid fa-play" style="color:whitesmoke"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 14px; color: #B3B3A4;">Rex Orange County</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2" style="height: 60px"><img src="img2.jpg" style="width:40px"></td>
+                    <td style="height: 10px">Best Friend</td>
+                    <td rowspan="2" style="font-size: 14px;">Best Friend</td>
+                    <td rowspan="2" id="songplay"><a href="index2.html"><i class="fa-solid fa-play" style="color:whitesmoke"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 14px; color: #B3B3A4;">Rex Orange County</td>
+                  </tr>
+                <tr>
+                    <td rowspan="2" style="height: 60px"><img src="img2.jpg" style="width:40px"></td>
+                    <td style="height: 10px">Best Friend</td>
+                    <td rowspan="2" style="font-size: 14px;">Best Friend</td>
+                    <td rowspan="2" id="songplay"><a href="index2.html"><i class="fa-solid fa-play" style="color:whitesmoke"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 14px; color: #B3B3A4;">Rex Orange County</td>
+                  </tr>
+              </table>
+              <div class="overlay" id="overlay" style="visibility:hidden">
+                <div class="confirm-box">
+                  <div onclick="closeConfirmBox()" class="close"></div>
+                  <h2>Confirmation</h2>
+                  <p>Are you sure you want to delete this playlist?</p>
+                  <button onclick="isConfirm(true)">Yes</button>
+                  <button onclick="isConfirm(false)">No</button>
+                </div>
+              </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
