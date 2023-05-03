@@ -169,6 +169,9 @@ a button.arrow2,
   margin-top: 20px;
   overflow-y: scroll;
   height: 250px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 .buttonsoptions {
@@ -291,9 +294,12 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
-#study.active {
-  background-color: gray;
+#study.active,
+#workout.active,
+#party.active {
+  background-color: rgb(3, 105, 3);
 }
+
 #study,
 #workout,
 #party {
@@ -302,19 +308,18 @@ body {
 button.set-time {
   background-color: #253d56;
 }
-button#play.inactive {
+
+#play,
+#save{
   background-color: #253d56;
-}
-button#save.inactive {
-  background-color: #253d56;
-}
-#workout.active {
-  background-color: gray;
-}
-#party.active {
-  background-color: gray;
+  color: white;
 }
 
+#play.inactive,
+#save.inactive{
+  background-color: rgb(60, 60, 60);
+  color:#121212
+}
 .icons {
   font-size: 15px;
   display: flex;
@@ -322,12 +327,6 @@ button#save.inactive {
   justify-items: center;
 }
 
-#play.inactive {
-  background-color: #2f313d;
-}
-#save.inactive {
-  background-color: #2f313d;
-}
 .popup {
   visibility: hidden;
 }
@@ -420,7 +419,6 @@ button#save.inactive {
 /* Slideshow container */
 .slideshow-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 300px;
@@ -438,6 +436,8 @@ button#save.inactive {
   text-align: center;
   color: whitesmoke;
   font-size: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /* Next & previous buttons */
