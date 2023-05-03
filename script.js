@@ -34,7 +34,7 @@ if(document.getElementById("save")){
 
         var data = JSON.parse(sessionStorage.getItem("playlists"));
         console.log(data)
-        const newPlaylist = mood.id + "_" + time;
+        const newPlaylist = {"name": mood.id + "_" + time, "mood": mood.id, "time": time}
         data.push(newPlaylist);
         sessionStorage.setItem("playlists", JSON.stringify(data));
     } else {
@@ -43,15 +43,14 @@ if(document.getElementById("save")){
 };}
 var buttonplay = document.getElementById("play-pause");
 function playpause() {
-    let inner= buttonplay.innerHTML;
-    console.log(inner)
-    if (inner == '<ion-icon name="caret-forward-outline" class="icons md hydrated" role="img" aria-label="caret forward outline"></ion-icon>'){
-        buttonplay.innerHTML = '<ion-icon name="pause-outline" class="icons"></ion-icon>';
-    }
-    else {
-        buttonplay.innerHTML = '<ion-icon name="caret-forward-outline" class="icons"></ion-icon>';
-    }
-    
+  let icon = buttonplay.querySelector(".icons");
+  let name = icon.getAttribute("name");
+  if (name == 'caret-forward-outline'){
+    icon.setAttribute("name","pause-outline");
+  }
+  else {
+    icon.setAttribute("name","caret-forward-outline");
+  }
 };
 
 function openPlaylists(){
@@ -59,14 +58,35 @@ function openPlaylists(){
     console.log(data)
     const playlists = JSON.parse(data);
     console.log(playlists)
-    for (i=0; i<playlists.length; i++){
-        let p = playlists[i];
+    if (playlists.length == 0){
+      let text = document.createTextNode("No playlists were created");
+      document.getElementById("playlists").appendChild(text);
+
+      let a = document.createElement("a");
+      let btn = document.createElement("button");
+      let createTxt = document.createTextNode("Create playlist");
+      btn.appendChild(createTxt);
+      a.setAttribute("href","create.html");
+      a.appendChild(btn);
+      document.getElementById("playlists").appendChild(a);
+    }
+    else {
+      for (i=0; i<playlists.length; i++){
+        let p = playlists[i].name;
+
         let text = document.createTextNode(p);
+        let a = document.createElement("a");
+        a.setAttribute("href","playlistsongs.html");
+
         let btn = document.createElement("button");
 
         btn.appendChild(text);
+        btn.setAttribute("onclick","choosePlaylist(this)");
 
-        document.getElementById("playlists").appendChild(btn);
+        a.appendChild(btn);
+
+        document.getElementById("playlists").appendChild(a);
+      }
     }
 };
 
@@ -183,3 +203,50 @@ var slideIndex = 1;
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
   }
+
+function showConfirmBox() {
+    document.getElementById("overlay").style.visibility = "visible";
+  }
+  function closeConfirmBox() {
+    document.getElementById("overlay").style.visibility = "hidden";
+  }
+
+  function isConfirm(answer) {
+    if (answer) {
+      const title = sessionStorage.getItem("playlistname");
+      const data = sessionStorage.getItem("playlists");
+
+      const name = JSON.parse(title);
+      const playlists = JSON.parse(data);
+      for (i=0; i<playlists.length; i++){
+        if (playlists[i].name == name){
+          playlists.splice(i,1);
+          sessionStorage.setItem("playlists", JSON.stringify(playlists));
+        }
+      }
+      window.location.replace("playlists.html");
+    }
+    closeConfirmBox();
+  };
+
+function choosePlaylist(btn){
+    const name = btn.innerHTML;
+    sessionStorage.setItem("playlistname",JSON.stringify(name));
+};
+
+function openPlaylistSongs(){
+  let playlistname = sessionStorage.getItem("playlistname");
+  document.getElementById("playlisttitle").innerHTML = playlistname;
+
+  const data = sessionStorage.getItem("playlists");
+  const playlists = JSON.parse(data);
+
+  let name = JSON.parse(playlistname);
+
+  for (i=0; i<playlists.length; i++){
+    if (playlists[i].name==name){
+      console.log("olá");
+      document.getElementById("duration").innerHTML = "Duration: " + playlists[i].time;
+    }
+  }
+};
