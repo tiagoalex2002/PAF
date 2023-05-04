@@ -27,6 +27,7 @@
         ><button class="arrow">
           <i class="fa-solid fa-bars"></i></button
       ></a>
+      <div class="texto1" id="playing">Playlist:</div>
       <!-- Full-width images with number and caption text -->
       <div id="music">
         <div class="myslides">
@@ -75,6 +76,10 @@
       ></a>
     </div>
     <script src="script.js"></script>
+    <script>
+      var playlist = sessionStorage.playlistname;
+      var playlistClean = playlist.substring(1,playlist.length-1);
+      document.getElementById('playing').innerHTML = "Playlist: " + playlistClean;</script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   </body>
 </html>
