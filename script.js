@@ -15,10 +15,10 @@ if (sessionStorage.getItem("songs") == null){
 function buttonClick(btn) {
 
   const activeBtn = document.querySelector(".active");
-  if (activeBtn !== null) {
-      activeBtn.classList.remove("active");
-  }
   if(btn.className != "setime"){
+    if (activeBtn !== null) {
+        activeBtn.classList.remove("active");
+    }
     btn.classList.add("active");
   }
   if (document.getElementById("set-time").value != ''){
