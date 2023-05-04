@@ -179,10 +179,10 @@ a button.arrow2,
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 35px;
   height: 20px;
   width: 200px;
-  margin-bottom: 20px;
+  margin-bottom: -10px;
 }
 
 .backgroundplaylist {
@@ -215,17 +215,17 @@ a button.arrow2,
   align-self: center;
   font-size: 20px;
   color: white;
-  margin-top: 10px;
+  margin-top: 30px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .setime {
-  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  width: 100px;
+  width: 200px;
+  margin-top: 10px;
 }
 
 .setime button {
@@ -700,4 +700,12 @@ h1{
 
 .close {
   cursor: pointer;
+}
+
+input#set-time{
+  background-color: #121212;
+  color: white;
+  width: 200px;
+  font-size: xx-large;
+  text-indent: 20px;
 }
