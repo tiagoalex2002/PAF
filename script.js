@@ -275,9 +275,8 @@ function openPlaylistSongs(){
 function openSongs(){
   var data = sessionStorage.getItem("songs");
   var songs = JSON.parse(data);
-  var html = "";
+  let element= document.getElementById("music").innerHTML
   for (i=0; i<songs.length;i++){
-    html += songs[i];
+    element += songs[i];
   }
-  document.getElementById("music").innerHTML = html;
 };
