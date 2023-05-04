@@ -13,19 +13,22 @@ if (sessionStorage.getItem("songs") == null){
 };
 
 function buttonClick(btn) {
-    const activeBtn = document.querySelector(".active");
-    if (activeBtn !== null) {
-        activeBtn.classList.remove("active");
-    }
+
+  const activeBtn = document.querySelector(".active");
+  if (activeBtn !== null) {
+      activeBtn.classList.remove("active");
+  }
+  if(btn.className != "setime"){
     btn.classList.add("active");
-    if (document.getElementById("set-time").value != ''){
-        const playBtn = document.getElementById("play");
-        const saveBtn = document.getElementById("save");
-        playBtn.disabled=false;
-        playBtn.classList.remove("inactive");
-        saveBtn.disabled=false;
-        saveBtn.classList.remove("inactive");
-    }
+  }
+  if (document.getElementById("set-time").value != ''){
+      const playBtn = document.getElementById("play");
+      const saveBtn = document.getElementById("save");
+      playBtn.disabled=false;
+      playBtn.classList.remove("inactive");
+      saveBtn.disabled=false;
+      saveBtn.classList.remove("inactive");
+  }
 };
 
 if(document.getElementById("save")){

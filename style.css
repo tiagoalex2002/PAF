@@ -24,10 +24,10 @@ a button.blue-bg {
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 button.arrow {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .album {
-  margin-top: 8px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
