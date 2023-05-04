@@ -18,7 +18,7 @@ function buttonClick(btn) {
         activeBtn.classList.remove("active");
     }
     btn.classList.add("active");
-    if (document.getElementsByClassName("setime")[0].firstElementChild.firstElementChild.innerHTML !== "Set time"){
+    if (document.getElementById("set-time").value != ''){
         const playBtn = document.getElementById("play");
         const saveBtn = document.getElementById("save");
         playBtn.disabled=false;
@@ -32,7 +32,7 @@ if(document.getElementById("save")){
     document.getElementById("save").onclick=  function() {
     let mood = document.getElementsByClassName("active")[0];
     if (typeof mood !== 'undefined') {
-        const time = document.getElementsByClassName("setime")[0].firstElementChild.firstElementChild.innerHTML;
+        const time = document.getElementById("set-time").value;
 
         const popup = document.getElementById("popup");
         const popupTxt = document.createTextNode("Your playlist has been saved as " + mood.id + "_" + time + ".");
