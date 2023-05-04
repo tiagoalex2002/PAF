@@ -431,7 +431,7 @@ button.set-time {
 }
 
 /* Slides */
-.mySlides {
+.myslides {
   display: none;
   text-align: center;
   color: whitesmoke;
