@@ -8,6 +8,8 @@
   height: 320px;
   width: 300px;
   border-radius: 10px;
+
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 a button.blue-bg {
   background-color: #253d56;
@@ -87,6 +89,7 @@ a button.arrow2,
   height: 320px;
   width: 300px;
   border-radius: 10px;
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 
 .texto2 {
@@ -142,6 +145,7 @@ a button.arrow2,
   height: 320px;
   width: 300px;
   border-radius: 10px;
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 
 .backgroundoptions button {
@@ -195,6 +199,7 @@ a button.arrow2,
   margin-left: 35%;
   height: 320px;
   border-radius: 10px;
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 
 .backgroundplaylist button {
@@ -216,7 +221,6 @@ a button.arrow2,
   font-size: 20px;
   color: white;
   margin-top: 30px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .setime {
@@ -227,7 +231,9 @@ a button.arrow2,
   width: 200px;
   margin-top: 10px;
 }
-
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
 .setime button {
   display: flex;
   justify-content: center;
@@ -262,6 +268,7 @@ a button.arrow2,
   margin-left: 35%;
   height: 320px;
   width: 300px;
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 
 .backgroundclock button {
@@ -291,7 +298,8 @@ a {
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Nunito", Times, serif;
+  font-weight: 200;
 }
 
 #study.active,
@@ -310,15 +318,15 @@ button.set-time {
 }
 
 #play,
-#save{
+#save {
   background-color: #253d56;
   color: white;
 }
 
 #play.inactive,
-#save.inactive{
+#save.inactive {
   background-color: rgb(60, 60, 60);
-  color:#121212
+  color: #121212;
 }
 .icons {
   font-size: 15px;
@@ -343,6 +351,7 @@ button.set-time {
   visibility: visible;
   font-size: larger;
   text-align: center;
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 
 /* width */
@@ -545,7 +554,6 @@ button.set-time {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #help {
@@ -566,11 +574,12 @@ button.set-time {
   align-items: center;
   margin-top: 15%;
   margin-left: 35%;
-  height: 300px;
+  height: 320px;
   width: 300px;
   border-radius: 10px;
   color: whitesmoke;
   background-color: rgba(0, 0, 0, 0.868);
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 
 .help {
@@ -596,7 +605,7 @@ button.set-time {
   margin-bottom: -20px;
 }
 
-label{
+label {
   display: inline-block;
   font-size: 10px;
 }
@@ -606,7 +615,7 @@ label{
   text-align: center;
 }
 
-#list{
+#list {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -615,17 +624,16 @@ label{
 
 table {
   font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-collapse: collapse;
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  display:inline-block;
+  display: inline-block;
   overflow: auto;
   height: 150px;
 }
 
-th{
+th {
   text-align: left;
 }
 
@@ -638,7 +646,7 @@ td {
   vertical-align: top;
 }
 
-.songs{
+div.songs {
   background-color: #121212;
   display: flex;
   flex-direction: column;
@@ -648,26 +656,26 @@ td {
   margin-left: 35%;
   height: 320px;
   border-radius: 10px;
-  color: whitesmoke
+  color: whitesmoke;
 }
-#controls{
+#controls {
   display: flex;
   width: 300px;
   margin-bottom: 20px;
 }
 
-#controls label{
+#controls label {
   width: 250px;
   font-size: large;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 #controls button {
   margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
-h1{
+h1 {
   align-self: flex-start;
   margin: 10px;
 }
@@ -678,7 +686,7 @@ h1{
   position: absolute;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 320px;
   width: 300px;
   border-radius: 10px;
   display: flex;
@@ -686,6 +694,7 @@ h1{
   text-align: center;
   z-index: 2;
   margin-top: -40px;
+  box-shadow: 5px 5px 25px #747474, -5px -5px 25px #ffffff;
 }
 
 .confirm-box {
@@ -702,10 +711,20 @@ h1{
   cursor: pointer;
 }
 
-input#set-time{
+input#set-time {
   background-color: #121212;
   color: white;
   width: 200px;
   font-size: xx-large;
   text-indent: 20px;
+}
+#playlisttitle {
+  display: block;
+  margin: 0 auto;
+}
+.container2 button {
+  background-color: #253d56;
+}
+img {
+  border-radius: 5px;
 }
