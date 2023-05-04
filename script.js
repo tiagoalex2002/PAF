@@ -2,6 +2,15 @@ if (sessionStorage.getItem("playlists") == null){
     sessionStorage.setItem("playlists",JSON.stringify([]))
 };
 
+if (sessionStorage.getItem("songs") == null){
+  var arr = []
+  const songs = document.getElementsByClassName("myslides fade");
+  for (i=0; i<songs.length; i++){
+    var element = '<div class="myslides fade">' + songs[i].innerHTML + '</div>'
+    arr.push(element);
+  }
+  sessionStorage.setItem("songs",JSON.stringify(arr));
+};
 
 function buttonClick(btn) {
     const activeBtn = document.querySelector(".active");
@@ -59,7 +68,7 @@ function openPlaylists(){
     const playlists = JSON.parse(data);
     console.log(playlists)
     if (playlists.length == 0){
-      let text = document.createTextNode("No playlists were created");
+      let text = document.createTextNode("No playlists were created.");
       document.getElementById("playlists").appendChild(text);
 
       let a = document.createElement("a");
@@ -181,6 +190,18 @@ var slideIndex = 1;
   showSlides(slideIndex);
   
   function plusSlides(n) {
+    if (n==1){
+      const data = sessionStorage.getItem("songs");
+      const songs = JSON.parse(data);
+      songs.push(songs.splice(0,1)[0]);
+      sessionStorage.setItem("songs",JSON.stringify(songs));
+    }
+    else{
+      const data = sessionStorage.getItem("songs");
+      const songs = JSON.parse(data);
+      songs.unshift(songs.pop());
+      sessionStorage.setItem("songs",JSON.stringify(songs));
+    }
     showSlides(slideIndex += n);
   }
   
@@ -190,7 +211,7 @@ var slideIndex = 1;
   
   function showSlides(n) {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
+    var slides = document.getElementsByClassName("myslides");
     var dots = document.getElementsByClassName("dot");
     if (n > slides.length) {slideIndex = 1}
       if (n < 1) {slideIndex = slides.length}
@@ -201,6 +222,7 @@ var slideIndex = 1;
         dots[i].className = dots[i].className.replace(" active", "");
       }
     slides[slideIndex-1].style.display = "block";
+
     dots[slideIndex-1].className += " active";
   }
 
@@ -245,8 +267,17 @@ function openPlaylistSongs(){
 
   for (i=0; i<playlists.length; i++){
     if (playlists[i].name==name){
-      console.log("olá");
       document.getElementById("duration").innerHTML = "Duration: " + playlists[i].time;
     }
   }
+};
+
+function openSongs(){
+  var data = sessionStorage.getItem("songs");
+  var songs = JSON.parse(data);
+  var html = "";
+  for (i=0; i<songs.length;i++){
+    html += songs[i];
+  }
+  document.getElementById("music").innerHTML = html;
 };
