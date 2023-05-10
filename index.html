@@ -1,62 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/8a0d7ba526.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@800&family=Asap:wght@700&family=Comfortaa&family=DM+Sans:wght@700&family=Dosis:wght@600&family=Heebo:wght@700&family=Lato:ital,wght@0,300;0,700;1,400&family=Montserrat+Alternates:ital,wght@0,200;1,500&family=Mukta&family=Nerko+One&family=Nunito:wght@900&family=Oswald:wght@500&family=Pacifico&family=Playfair+Display&family=Quicksand&family=Raleway:ital@1&display=swap"
-      rel="stylesheet"
-    />
-    <title>PAF</title>
-  </head>
-  <body onload="display_ct();">
-    <div class="background1">
-      <div class="header">
-        <div id="hour"></div>
-      </div>
-      <a href="options.html"
-        ><button class="arrow">
-          <i class="fa-solid fa-bars"></i></button
-      ></a>
-      <div class="album"><img src="./img1.jpg" /></div>
-      <div class="texto1">Coldplay - Yellow</div>
-      <div class="buttons">
-        <button>
-          <ion-icon
-            name="arrow-back-outline"
-            class="icons"
-            style="color: white"
-          ></ion-icon>
-        </button>
-        <button id="play-pause" onclick="playpause()">
-          <ion-icon
-            name="caret-forward-outline"
-            class="icons"
-            style="color: white"
-          ></ion-icon>
-        </button>
-        <button>
-          <ion-icon
-            name="arrow-forward-outline"
-            class="icons"
-            style="color: white"
-          ></ion-icon>
-        </button>
-      </div>
-      <a href="curiosities.html"
-        ><button class="arrow">
-          <i class="fa-solid fa-info"></i></button
-      ></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/8a0d7ba526.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@800&family=Asap:wght@700&family=Comfortaa&family=DM+Sans:wght@700&family=Dosis:wght@600&family=Heebo:wght@700&family=Lato:ital,wght@0,300;0,700;1,400&family=Montserrat+Alternates:ital,wght@0,200;1,500&family=Mukta&family=Nerko+One&family=Nunito:wght@900&family=Oswald:wght@500&family=Pacifico&family=Playfair+Display&family=Quicksand&family=Raleway:ital@1&display=swap"
+    rel="stylesheet" />
+  <title>PAF</title>
+</head>
+
+<body onload="display_ct();">
+  <!-- Slideshow container -->
+  <div class="background1">
+    <div class="header">
+      <div id="hour"></div>
     </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <a href="options.html"><button class="arrow">
+        <i class="fa-solid fa-bars"></i></button></a>
+    <div class="texto1" id="playing">Playlist:</div>
+    <!-- Full-width images with number and caption text -->
+    <div id="music">
+      <div class="myslides">
+        <div class="album"><img src="img1.jpg" /></div>
+        <div class="texto1">Coldplay - Yellow</div>
+      </div>
+
+      <div class="myslides">
+        <div class="album"><img src="img2.jpg" /></div>
+        <div class="texto1">Xutos</div>
+      </div>
+
+      <div class="myslides">
+        <div class="album"><img src="img3.png" /></div>
+        <div class="texto1">Kings of Leon</div>
+      </div>
+
+      <div class="myslides ">
+        <div class="album"><img src="img4.png" /></div>
+        <div class="texto1">Rex Orange County - Best Friend</div>
+      </div>
+
+      <div class="myslides ">
+        <div class="album"><img src="img5.jpg" /></div>
+        <div class="texto1">Queen - Somebody to Love</div>
+      </div>
+
+      <div class="myslides ">
+        <div class="album"><img src="img6.jpg" /></div>
+        <div class="texto1">Keane - Somewhere Only We Know</div>
+      </div>
+
+      <div class="myslides ">
+        <div class="album"><img src="img7.jpg" /></div>
+        <div class="texto1">António Variações - Estou Além</div>
+      </div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <div class="buttons">
+      <button onclick="plusSlides(-1)">
+        <ion-icon name="arrow-back-outline" class="icons" style="color: white"></ion-icon>
+      </button>
+      <button id="play-pause" onclick="playpause()">
+        <ion-icon name="caret-forward-outline" class="icons" style="color: white"></ion-icon>
+      </button>
+      <button onclick="plusSlides(1)">
+        <ion-icon name="arrow-forward-outline" class="icons" style="color: white"></ion-icon>
+      </button>
+    </div>
+    <a href="curiosities.html"><button class="arrow">
+        <i class="fa-solid fa-info"></i></button></a>
+  </div>
+  <script src="script.js"></script>
+  <script src="index.js"></script>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
 </html>
