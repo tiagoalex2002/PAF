@@ -1,37 +1,15 @@
-function openPlaylists() {
+function openPlaylistSongs() {
+    let playlistname = sessionStorage.getItem("playlistname");
+    document.getElementById("playlisttitle").innerHTML = playlistname;
+
     const data = sessionStorage.getItem("playlists");
-    console.log(data)
     const playlists = JSON.parse(data);
-    console.log(playlists)
-    if (playlists.length == 0) {
-        let text = document.createTextNode("No playlists were created.");
-        document.getElementById("playlists").appendChild(text);
 
-        let a = document.createElement("a");
-        let btn = document.createElement("button");
-        btn.setAttribute("style", "font-family: 'Nunito', Times, serif")
-        let createTxt = document.createTextNode("Create playlist");
-        btn.appendChild(createTxt);
-        a.setAttribute("href", "create.html");
-        a.appendChild(btn);
-        document.getElementById("playlists").appendChild(a);
-    }
-    else {
-        for (i = 0; i < playlists.length; i++) {
-            let p = playlists[i].name;
+    let name = JSON.parse(playlistname);
 
-            let text = document.createTextNode(p);
-            let a = document.createElement("a");
-            a.setAttribute("href", "playlistsongs.html");
-
-            let btn = document.createElement("button");
-
-            btn.appendChild(text);
-            btn.setAttribute("onclick", "choosePlaylist(this)");
-
-            a.appendChild(btn);
-
-            document.getElementById("playlists").appendChild(a);
+    for (i = 0; i < playlists.length; i++) {
+        if (playlists[i].name == name) {
+            document.getElementById("duration").innerHTML = "Duration: " + playlists[i].time;
         }
     }
 };
@@ -53,6 +31,7 @@ function isConfirm(answer) {
         for (i = 0; i < playlists.length; i++) {
             if (playlists[i].name == name) {
                 playlists.splice(i, 1);
+                console.log(playlists);
                 sessionStorage.setItem("playlists", JSON.stringify(playlists));
             }
         }
@@ -66,18 +45,33 @@ function choosePlaylist(btn) {
     sessionStorage.setItem("playlistname", JSON.stringify(name));
 };
 
-// function openPlaylistSongs() {
-//     let playlistname = sessionStorage.getItem("playlistname");
-//     document.getElementById("playlisttitle").innerHTML = playlistname;
-
-//     const data = sessionStorage.getItem("playlists");
-//     const playlists = JSON.parse(data);
-
-//     let name = JSON.parse(playlistname);
-
-//     for (i = 0; i < playlists.length; i++) {
-//         if (playlists[i].name == name) {
-//             document.getElementById("duration").innerHTML = "Duration: " + playlists[i].time;
-//         }
+// function openSongs(){
+//     var data = sessionStorage.getItem("songs");
+//     var songs = JSON.parse(data);
+//     let element = document.getElementById("music").innerHTML
+//     console.log(element)
+//     element = ''
+//     console.log(songs)
+//     console.log(slideIndex)
+//     for (let i = 0; i < songs.length; i++) {
+//         element += songs[i]
 //     }
-// };
+//     console.log(element)
+    //if (slideIndex==0){
+    // for (i=0; i<songs.length;i++){
+    //   element += songs[i];
+    //  }
+    //}
+    //else if( slideIndex==1){
+    // for (i=1; i<songs.length;i++){
+    //   element += songs[i];
+    //  }
+    // element += songs[0]
+    //}
+    //else if(slideIndex==2){
+    // element += songs[2]
+    //  for (i=0; i<(songs.length-1);i++){
+    //   element += songs[i];
+    // }
+    //}
+//};
