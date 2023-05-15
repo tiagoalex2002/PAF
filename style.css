@@ -13,6 +13,7 @@
 }
 a button.blue-bg {
   background-color: #253d56;
+  font-family: "Nunito", Times, serif;
 }
 .arrow {
   display: flex;
@@ -173,7 +174,6 @@ a button.arrow2,
   overflow-y: scroll;
   height: 250px;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -184,8 +184,18 @@ a button.arrow2,
   align-items: center;
   margin-top: 35px;
   height: 20px;
-  width: 200px;
+  width: 250px;
   margin-bottom: -10px;
+}
+
+.buttonsoptions2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  height: 1px;
+  width: 250px;
 }
 
 .backgroundplaylist {
@@ -219,7 +229,8 @@ a button.arrow2,
   align-self: center;
   font-size: 20px;
   color: white;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .optiontext {
@@ -227,12 +238,12 @@ a button.arrow2,
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 190px;
+  width: 220px;
+  margin-top: 15px;
 }
 .smalltext {
   color: white;
-  font-size: x-small;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .setime {
@@ -240,8 +251,7 @@ a button.arrow2,
   justify-content: center;
   align-items: center;
   height: 35px;
-  width: 200px;
-  margin-top: 10px;
+  width: 250px;
 }
 input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(100%);
@@ -257,16 +267,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   margin-bottom: 30px;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-}
-
-.buttonsoptions2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
-  height: 1px;
-  width: 200px;
 }
 
 .backgroundclock {
@@ -323,15 +323,17 @@ body {
 #workout,
 #party {
   background-color: #253d56;
-}
-button.set-time {
-  background-color: #253d56;
+  width: 60px;
+  height: 60px;
 }
 
 #play,
-#save {
+#save,
+#home {
   background-color: #253d56;
   color: white;
+  width: 50px;
+  height: 50px;
 }
 
 #play.inactive,
@@ -598,22 +600,20 @@ button.set-time {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
+  height: 220px;
 }
 
 #helptext {
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 #title {
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
-  margin-bottom: -20px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -725,7 +725,7 @@ h1 {
 input#set-time {
   background-color: #121212;
   color: white;
-  width: 200px;
+  width: 250px;
   font-size: xx-large;
   text-indent: 20px;
 }
@@ -738,4 +738,8 @@ input#set-time {
 }
 img {
   border-radius: 5px;
+}
+
+#curiosities{
+  top: 200px;
 }
