@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8a0d7ba526.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>PAF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@800&family=Asap:wght@700&family=Comfortaa&family=DM+Sans:wght@700&family=Dosis:wght@600&family=Heebo:wght@700&family=Lato:ital,wght@0,300;0,700;1,400&family=Montserrat+Alternates:ital,wght@0,200;1,500&family=Mukta&family=Nerko+One&family=Nunito:wght@900&family=Oswald:wght@500&family=Pacifico&family=Playfair+Display&family=Quicksand&family=Raleway:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+      <div class="header" style="margin-top: 10px">
+        <a
+          href="index.html"
+          style="color: #f3f4f7; font-family: Arial, Helvetica, sans-serif"
+        >
+          <i
+            id="back"
+            class="fa-solid fa-arrow-up fa-sm"
+            style="color: #f3f4f7"
+          ></i>
+        </a>
+      </div>
+
+      <!-- Full-width slides/quotes -->
+      <div class="myslides">
+        <p>
+            Kings of Leon were formed in Nashville, Tenessee in 2000.
+      </div>
+
+      <div class="myslides">
+        <p>
+            The band is made up of three brothers and their cousin.
+        </p>
+      </div>
+
+      <div class="myslides">
+        <p>
+            Their first album was a huge success in the UK, where it sold close to a million copies
+            (but 100,000 in the U.S.).
+        </p>
+      </div>
+
+      <!-- Next/prev buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="curiosities.js"></script>
+  </body>
+</html>
