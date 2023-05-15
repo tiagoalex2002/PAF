@@ -2,18 +2,6 @@ var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-    if (n == 1) {
-        const data = sessionStorage.getItem("songs");
-        const songs = JSON.parse(data);
-        songs.push(songs.splice(0, 1)[0]);
-        sessionStorage.setItem("songs", JSON.stringify(songs));
-    }
-    else {
-        const data = sessionStorage.getItem("songs");
-        const songs = JSON.parse(data);
-        songs.unshift(songs.pop());
-        sessionStorage.setItem("songs", JSON.stringify(songs));
-    }
     showSlides(slideIndex += n);
 };
 
