@@ -9,6 +9,7 @@ function openPlaylists() {
 
         let a = document.createElement("a");
         let btn = document.createElement("button");
+        btn.setAttribute("style", "font-family: 'Nunito', Times, serif")
         let createTxt = document.createTextNode("Create playlist");
         btn.appendChild(createTxt);
         a.setAttribute("href", "create.html");
@@ -65,18 +66,18 @@ function choosePlaylist(btn) {
     sessionStorage.setItem("playlistname", JSON.stringify(name));
 };
 
-function openPlaylistSongs() {
-    let playlistname = sessionStorage.getItem("playlistname");
-    document.getElementById("playlisttitle").innerHTML = playlistname;
+// function openPlaylistSongs() {
+//     let playlistname = sessionStorage.getItem("playlistname");
+//     document.getElementById("playlisttitle").innerHTML = playlistname;
 
-    const data = sessionStorage.getItem("playlists");
-    const playlists = JSON.parse(data);
+//     const data = sessionStorage.getItem("playlists");
+//     const playlists = JSON.parse(data);
 
-    let name = JSON.parse(playlistname);
+//     let name = JSON.parse(playlistname);
 
-    for (i = 0; i < playlists.length; i++) {
-        if (playlists[i].name == name) {
-            document.getElementById("duration").innerHTML = "Duration: " + playlists[i].time;
-        }
-    }
-};
+//     for (i = 0; i < playlists.length; i++) {
+//         if (playlists[i].name == name) {
+//             document.getElementById("duration").innerHTML = "Duration: " + playlists[i].time;
+//         }
+//     }
+// };
