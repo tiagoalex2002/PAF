@@ -2,6 +2,10 @@ if (sessionStorage.getItem("playlists") == null) {
     sessionStorage.setItem("playlists", JSON.stringify([]))
 };
 
+if (sessionStorage.getItem("slideIndex") == null) {
+    sessionStorage.setItem("slideIndex", JSON.stringify(1))
+};
+
 if (sessionStorage.getItem("songs") == null) {
     var arr = []
     const songs = document.getElementsByClassName("myslides fade");
@@ -30,22 +34,21 @@ function playpause() {
     }
 };
 
-var slideIndex = 1;
+var slideIndex = JSON.parse(sessionStorage.getItem("slideIndex"));
+document.getElementById("curiosities").setAttribute("href",slideIndex.toString()+".html");
 showSlides(slideIndex);
 
 function plusSlides(n) {
-    if (n == 1) {
-        const data = sessionStorage.getItem("songs");
-        const songs = JSON.parse(data);
-        songs.push(songs.splice(0, 1)[0]);
-        sessionStorage.setItem("songs", JSON.stringify(songs));
-    }
-    else {
-        const data = sessionStorage.getItem("songs");
-        const songs = JSON.parse(data);
-        songs.unshift(songs.pop());
-        sessionStorage.setItem("songs", JSON.stringify(songs));
-    }
+    var index = JSON.parse(sessionStorage.getItem("slideIndex"));
+    var slides = document.getElementsByClassName("myslides");
+    index += n;
+    if (index > slides.length) { index = 1 }
+    if (index < 1) { index = slides.length }
+    
+    sessionStorage.setItem("slideIndex", JSON.stringify(index));
+
+    document.getElementById("curiosities").setAttribute("href",index.toString()+".html");
+
     showSlides(slideIndex += n);
 };
 
@@ -56,7 +59,6 @@ function currentSlide(n) {
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("myslides");
-    console.log(slides)
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
