@@ -1,15 +1,31 @@
-function openSongs() {
-    var data = sessionStorage.getItem("songs");
-    var songs = JSON.parse(data);
-    let element = document.getElementById("music").innerHTML
-    console.log(element)
-    element = ''
-    console.log(songs)
-    console.log(slideIndex)
-    for (let i = 0; i < songs.length; i++) {
-        element += songs[i]
+function openPlaylistSongs() {
+    let playlistname = sessionStorage.getItem("playlistname");
+    document.getElementById("playlisttitle").innerHTML = playlistname;
+
+    const data = sessionStorage.getItem("playlists");
+    const playlists = JSON.parse(data);
+
+    let name = JSON.parse(playlistname);
+
+    for (i = 0; i < playlists.length; i++) {
+        if (playlists[i].name == name) {
+            document.getElementById("duration").innerHTML = "Duration: " + playlists[i].time;
+        }
     }
-    console.log(element)
+};
+
+// function openSongs(){
+//     var data = sessionStorage.getItem("songs");
+//     var songs = JSON.parse(data);
+//     let element = document.getElementById("music").innerHTML
+//     console.log(element)
+//     element = ''
+//     console.log(songs)
+//     console.log(slideIndex)
+//     for (let i = 0; i < songs.length; i++) {
+//         element += songs[i]
+//     }
+//     console.log(element)
     //if (slideIndex==0){
     // for (i=0; i<songs.length;i++){
     //   element += songs[i];
@@ -27,4 +43,4 @@ function openSongs() {
     //   element += songs[i];
     // }
     //}
-};
+//};
