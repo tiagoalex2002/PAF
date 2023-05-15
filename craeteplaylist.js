@@ -7,7 +7,7 @@ function buttonClick(btn) {
         }
         btn.classList.add("active");
     }
-    if (document.getElementById("set-time").value != '') {
+    if (document.getElementById("set-time").value != '' && document.querySelector(".active") != null) {
         const playBtn = document.getElementById("play");
         const saveBtn = document.getElementById("save");
         playBtn.disabled = false;
